@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity implements RequestInterface{
         setContentView(R.layout.activity_main);
         tvContent = findViewById(R.id.tv_request);
         btnRequest = findViewById(R.id.btn_request);
-        presenter = new RequestPresenter(this);
+//        presenter = new RequestPresenter(this);
+        presenter = new RequestPresenter();
+        presenter.attachView(this);
         btnRequest.setOnClickListener(v->{
 //            requestData("101010100");
             presenter.requestData("101010100");
@@ -72,5 +74,12 @@ public class MainActivity extends AppCompatActivity implements RequestInterface{
     @Override
     public void requestFailure(String failure) {
         tvContent.setText(failure);
+    }
+
+    @Override
+    protected void onDestroy() {
+        presenter.interruptHttp();
+        presenter.detach();
+        super.onDestroy();
     }
 }

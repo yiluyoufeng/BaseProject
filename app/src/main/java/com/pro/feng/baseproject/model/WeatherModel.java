@@ -15,6 +15,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class WeatherModel {
     String baseUrl = "http://www.weather.com.cn/";
+    private Call<WeatherBean> weatherBeanCall;
 
     public void requestData(String cityId, Callback<WeatherBean> callback) {
         Retrofit retrofit = new Retrofit.Builder()
@@ -25,7 +26,16 @@ public class WeatherModel {
                 .build();
         ApiService apiService = retrofit.create(ApiService.class);
         //请求
-        Call<WeatherBean> weatherBeanCall = apiService.requestWeather(cityId);
+        weatherBeanCall = apiService.requestWeather(cityId);
         weatherBeanCall.enqueue(callback);
+    }
+
+    /**
+     * 取消网络请求
+     */
+    public void interruptHttp() {
+        if(weatherBeanCall != null && !weatherBeanCall.isCanceled()){
+            weatherBeanCall.cancel();
+        }
     }
 }
