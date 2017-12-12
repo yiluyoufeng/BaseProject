@@ -1,5 +1,6 @@
 package com.pro.feng.baseproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -33,7 +34,9 @@ public class MainActivity extends AppCompatActivity implements RequestInterface{
         presenter.attachView(this);
         btnRequest.setOnClickListener(v->{
 //            requestData("101010100");
-            presenter.requestData("101010100");
+//            presenter.requestData("101010100");
+            Intent intent = new Intent(this,Main2Activity.class);
+            startActivity(intent);
         });
 
     }
