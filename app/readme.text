@@ -1,0 +1,6 @@
+最终基类封装：只需要mvpbase包下的所有文件
+最终测试Activity：Main3Activity
+最终contact：contact3包
+
+应用代理模式，工厂模式，注解、反射，泛型，高级重新等Java技术
+解决代码冗余、内存泄漏、生命周期管理、数据存储等问题

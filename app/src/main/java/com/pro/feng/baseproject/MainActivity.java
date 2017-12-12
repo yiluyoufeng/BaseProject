@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements RequestInterface{
         btnRequest.setOnClickListener(v->{
 //            requestData("101010100");
 //            presenter.requestData("101010100");
-            Intent intent = new Intent(this,Main2Activity.class);
+            Intent intent = new Intent(this,Main3Activity.class);
             startActivity(intent);
         });
 
