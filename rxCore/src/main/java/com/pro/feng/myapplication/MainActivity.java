@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.pro.feng.myapplication.core.ApiManager;
+import com.pro.feng.myapplication.core.NetHelperUtil;
+import com.pro.feng.myapplication.core.okhttp.callback.JYNetListener;
 
 import java.util.HashMap;
 
@@ -18,16 +20,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HashMap<String,String> params = new HashMap<>();
-        Call<String> repo = ApiManager.getApi().getGetData(params);
-        repo.enqueue(new Callback<String>() {
+        HashMap<String, String> params = new HashMap<>();
+        NetHelperUtil.postConvert(ApiManager.getApi().getGetData(params), new JYNetListener<String>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-
-            }
-
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onNetSuccess(String entity) {
 
             }
         });

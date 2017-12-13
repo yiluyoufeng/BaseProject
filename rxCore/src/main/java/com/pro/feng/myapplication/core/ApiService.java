@@ -28,5 +28,5 @@ public interface ApiService {
     Call<String> getPostData(@FieldMap Map<String, String> map);
 
     @GET("/orderApi/productPageList")
-    Call<String> getGetData(@QueryMap Map<String, String> map);
+    Observable<String> getGetData(@QueryMap Map<String, String> map);
 }
