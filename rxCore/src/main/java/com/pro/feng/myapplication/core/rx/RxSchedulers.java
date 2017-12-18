@@ -6,7 +6,6 @@ import rx.schedulers.Schedulers;
 
 /**
  * RxAndroid线程切换
- * Created by baixiaokang on 16/5/6.
  */
 public class RxSchedulers {
     public static <T> Observable.Transformer<T, T> io_main() {
