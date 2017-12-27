@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HF</string>
+    <string name="title_home">首页</string>
+    <string name="title_dashboard">电影</string>
+    <string name="title_notifications">消息</string>
+
+    <string name="empty_network_error">网络异常，点击重试</string>
+    <string name="empty_no_data">没有数据，点击重试</string>
+
+    <string name="transition_movie_img">transition_movie_img</string>
+</resources>
