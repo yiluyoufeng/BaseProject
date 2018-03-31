@@ -8,4 +8,14 @@
         <attr name="mHorizontalPadding" format="dimension" />
         <attr name="clipBorderWidth" format="dimension" />
     </declare-styleable>
+    
+    <declare-styleable name="TabRadioButton">
+        <attr name="text" format="string" />
+        <attr name="textdimension" format="dimension" />
+        <attr name="normalinsidebackground" format="reference" />
+        <attr name="normalexternalbackground" format="reference" />
+        <attr name="selectedinsidebackground" format="reference" />
+        <attr name="selectedexternalbackground" format="reference" />
+        
+    </declare-styleable>
 </resources>

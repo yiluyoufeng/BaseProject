@@ -2,6 +2,7 @@ package com.pro.feng.baseproject.contact3;
 
 import com.pro.feng.baseproject.api.WeatherBean;
 import com.pro.feng.baseproject.model.WeatherModel;
+import com.pro.feng.baseproject.mvpbase.factory.CreatePresenter;
 import com.pro.feng.baseproject.mvpbase.presenter.BaseMvpPresenter;
 
 import retrofit2.Call;
@@ -11,7 +12,6 @@ import retrofit2.Response;
 /**
  * Created by Feng on 2017/12/12.
  */
-
 public class Request3Presenter extends BaseMvpPresenter<Request3View>{
 
     private WeatherModel model;

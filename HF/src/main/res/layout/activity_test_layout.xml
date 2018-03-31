@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.pro.feng.hf.widget.view.LinView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <com.pro.feng.hf.widget.view.Lin2View
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true">
+        <com.pro.feng.hf.widget.view.TabRadioButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:button="@null"
+            android:background="@android:color/transparent"
+            app:normalexternalbackground="@drawable/iv_rb1_bg_normal"
+            app:normalinsidebackground="@drawable/iv_rb1_in_normal"
+            app:selectedexternalbackground="@drawable/iv_rb1_bg_selected"
+            app:selectedinsidebackground="@drawable/iv_rb1_in_selected"
+            app:text="消息"
+            app:textdimension="12sp"/>
 
-        <com.pro.feng.hf.widget.view.MyView
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:textSize="22sp"
-            android:background="#FF0"
-            android:text="测试"/>
 
-    </com.pro.feng.hf.widget.view.Lin2View>
-
-</com.pro.feng.hf.widget.view.LinView>
+</RelativeLayout>

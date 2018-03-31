@@ -32,6 +32,15 @@
         <activity android:name=".ui.mine.HeadSettingActivity"/>
 
         <activity android:name=".ui.mine.AboutUsActivity"/>
+
+        <activity android:name=".ui.main.KeepAliveActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:finishOnTaskLaunch="false"
+            android:launchMode="singleInstance"
+            android:process=":live"
+            android:theme="@style/liveActivityStyle"/>
     </application>
 
 </manifest>

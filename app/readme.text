@@ -4,3 +4,48 @@
 
 应用代理模式，工厂模式，注解、反射，泛型，高级重新等Java技术
 解决代码冗余、内存泄漏、生命周期管理、数据存储等问题
+
+
+
+Glide 优点
+1. 可以与Activity 、Fragment 生命周期保持一致，更好的控制加载图片的周期
+2. 缓存的图片BitMap格式采用RGB-565，相对于毕加索的RGB-8888，占用内存空间小
+3. 根据ImageView大小缓存大小，而毕加索框架缓存的是整个图片的大小（需要重新跳转大小，设置图片），速度相对快
+4. Glide 可以加载动图
+
+缺点
+资源包大，方法数多
+
+原理分析：
+缓存技术：
+内存缓存采用LruCache + 弱引用机制，弱引用的好处在于：保护这些图片不会被LruCache算法回收掉
+当前使用的图片采用弱引用进行缓存
+没有使用的采用LruCache缓存
+
+磁盘缓存：DiskLruCache
+磁盘缓存大小默认是250Mb
+
+Glide.with(context).load(url).into(Target);
+自定义Target
+SimpleTarget  可以拿到加载的资源数据
+ViewTarget    可以设置非ImageView的View的背景等
+
+Glide.whit(context).load(url).preload();
+preLoad预加载
+
+Glide.whit(context).load(url).listener(listener).into(image);
+
+自定义Glide配置，比如我们在开发中想把图片保存到公有目录中，把图片缓存的BitMap格式改为RGB-8888等:
+自定义GlideModule 重写方法，通过GlideBuilder即可实现自定义配置
+
+Glide加载图片显示进度条
+Glide默认使用的是HttpUrlConnection进行通讯，需要重写Http通讯组件(OkHttp)
+自定义GlideModule，注册新的组件机制
+glide.register(GlideUrl.class, InputStream.class, new OkHttpGlideUrlLoader.Factory());
+利用okHttp中的拦截器实现进度的回调
+
+
+图片的scaleType显示图片规则：
+
+
+

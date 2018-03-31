@@ -15,13 +15,11 @@ import com.pro.feng.hf.widget.view.MyView;
  */
 
 public class AboutUsActivity extends AppCompatActivity{
-    MyView view;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_layout);
-        view = findViewById(R.id.view);
 
 //        view.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -39,17 +37,4 @@ public class AboutUsActivity extends AppCompatActivity{
 //        });
     }
 
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        LogUtils.e("Activity----------dispatchTouchEvent");
-        return super.dispatchTouchEvent(ev);
-    }
-
-
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        LogUtils.e("Activity----------onTouchEvent");
-        return super.onTouchEvent(event);
-    }
 }
